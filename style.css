@@ -1,0 +1,383 @@
+/* !RESET */
+* {
+    margin:0;
+    border: 0;
+    padding:0;
+    color: #ffffff; /* Couleur lien */
+    font-family: 'Roboto', Helvetica, serif;
+    list-style: none; /* Liste sans point */
+    text-decoration: inherit; /* Souligné lien enlevé */
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Sansation';
+    src: url('Font/Sansation-Regular.ttf');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap; /* Helps control loading behavior */
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('Font/Roboto-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap; /* Helps control loading behavior */
+}
+
+html, body {
+    background: #2E2E2E;
+    overflow-x: hidden;
+}
+
+img {
+    display: block; /* Ligne du bas enlevé */
+}
+
+img, button {
+    cursor: pointer;
+}
+
+main {
+    margin: 0 auto; /* Centre le tout */
+    padding: 5rem 0rem;
+    min-height: 100vh; /* Remplit tout l'écran */
+    max-width: 1200px; /* Limite la largeur totale sur très grand écran */
+}
+
+main button {
+    background: #26a799; /* Couleur de fond */
+    padding: 0.5rem 1rem ; /* Taille des liens */ 
+    clip-path: polygon(
+        8.5px 0,                   /* Coin supérieur gauche coupé (8.5px depuis la gauche) */
+        100% 0,                    /* Coin supérieur droit */
+        100% 45%,                  /* Milieu du côté droit (arrêt au milieu vertical) */
+        calc(100% - 8.5px) 100%,   /* Coin inférieur droit coupé (8.5px en retrait du bord droit) */
+        0 100%,                    /* Coin inférieur gauche */
+        0 55%                      /* Milieu du côté gauche */
+    );
+    position: relative; /* Indispensable */
+    overflow: hidden; /* Supprime le scroll */
+}
+
+.buttons {
+    padding: 1rem;
+    gap: 1rem;
+    display: flex;
+    justify-content: center; /* <--- centre horizontalement */
+}
+
+
+main button .effet {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -100%; /* Départ hors du bouton à gauche */
+    width: 50%; /* Taille du shiny (moitié du bouton pour un effet net) */
+    height: 200%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #ffffff,
+        transparent
+    ); /* Dégradé pour un effet brillant */
+}
+
+@keyframes shiny {
+    0%   { transform: translateX(0) rotate(0deg); }  /* Départ à -150% */
+    50%  { transform: translateX(400%); }             /* Traverse tout le bouton */
+    100% { transform: translateX(400%); opacity: 0; } /* Reste loin + disparaît */
+}
+
+main button:hover .effet {
+    animation: shiny 1s ease-out forwards; /* Forwards = garde l'état final (donc invisible) */
+}
+
+h1, h2, h3 {
+    font-family: 'Sansation';
+    letter-spacing: 0.15rem;
+    padding: 0.5rem 0;
+}
+
+p {
+    font-family: 'Roboto';
+    padding: 0.5rem 0;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+a:hover {
+    color: #26a799; /* Couleur lien */
+}
+
+/* TETE */
+header {
+    background: #121616;
+    position: fixed; /* Menu suit le scroll */
+    width: 100%; /* Remplit l'écran en position: fixed; */
+    z-index: 1000;
+}
+
+header nav {
+    background: #121616;
+    display: grid; /* Tableau */  
+    grid-template-columns: repeat(2, 1fr); /* Nombre de colonne */
+    max-width: 1300px; /* Limite la largeur totale sur très grand écran */
+    margin: 0 auto; /* Centre le tout */
+    align-items: center;
+}
+
+.nav-pc {
+    padding: 1rem;
+    background: #121616;
+    justify-self: end; /* Nav à gauche */
+} 
+
+.nav-pc ul {
+    gap: 1rem; /* Espace entre les liens */ 
+    display: flex; /* Liens dans la meme ligne */
+}
+
+.nav-pc li a {
+    padding: 0.5rem 1rem; /* Taille des liens */ 
+    display: block; /* Uniformisation des liens avec le fond du ul */  
+}
+
+.nav-mobile {
+    background: #121616;
+    padding: 0.5rem 1rem;
+    gap: 5px;
+    flex-direction: column; /* Lignes en colonne */ 
+    display: none; /* Affichage absent en pc */  
+    justify-self: end; /* Nav à droite */
+    justify-content: center; /* Centre les spans verticalement pour une symétrie parfaite */
+    align-items: center;
+}
+
+.nav-mobile span {
+    background: #ffffff;
+    width: 1.5rem; /* Longueur lignes */  
+    height: 0.15rem; /* Epaisseur lignes */ 
+}
+
+.nav-mobile.clicked span {
+    transition: all 0.3s ease; /* Remet la fluidité seulement après un premier clic */
+}
+
+@keyframes span1 {
+  0% { transform: translateY(0px) rotate(0deg); } /* Début */
+  50% { transform: translateY(7.5px) rotate(0deg); } /* Milieu */
+  100% { transform: translateY(7.5px) rotate(45deg); } /* Fin */
+}
+
+@keyframes span3 {
+  0% { transform: translateY(0px) rotate(0deg); } /* Début */
+  50% { transform: translateY(-7.5px) rotate(0deg); } /* Milieu */
+  100% { transform: translateY(-7.5px) rotate(-45deg); } /* Fin */
+}
+
+@keyframes span1-reverse {
+    0%   { transform: translateY(7.5px) rotate(45deg); }
+    50%  { transform: translateY(7.5px) rotate(0deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+}
+
+@keyframes span3-reverse {
+    0%   { transform: translateY(-7.5px) rotate(-45deg); }
+    50%  { transform: translateY(-7.5px) rotate(0deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+}
+
+.nav-mobile.clicked.active span:nth-child(1) {
+    animation: span1 0.5s ease-out forwards;
+}
+
+.nav-mobile.clicked.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-mobile.clicked.active span:nth-child(3) {
+    animation: span3 0.5s ease-out forwards;
+}
+
+.nav-mobile.clicked:not(.active) span:nth-child(1) {
+    animation: span1-reverse 0.5s ease-out forwards;
+}
+
+.nav-mobile.clicked:not(.active) span:nth-child(3) {
+    animation: span3-reverse 0.5s ease-out forwards;
+}
+
+/* CORPS */
+.content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Nombre de colonne */
+    align-items: center;
+}
+
+.content aside {
+  grid-column: span 2; /* Occupe deux colonnes */
+}
+
+.content aside {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* Ratio 16:9 => 9/16 = 0.5625 */
+    height: 0;
+}
+
+.content aside iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.content img {
+    width: 100%;
+    text-align: center;
+}
+
+.video {
+    width: 100%;          /* Remplit tout l'espace disponible */
+    max-width: 1200px;    /* Largeur max (optionnel) */
+    margin: 1rem auto;    /* Centre horizontalement */
+    position: relative;   
+    padding-top: 56.25%;  /* Ratio 16:9 */
+}
+
+.video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+
+.card {
+    padding: 1rem;
+}
+
+.content1 {
+    display: grid;
+    grid-template-columns: 1fr; /* Nombre de colonne */
+    align-items: center;
+}
+
+.content1 img {
+    width: 100%;
+}
+
+.figure  {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colonnes en PC */
+    gap: 1rem;
+}
+
+/* PIEDS */
+footer {
+    background: #121616;
+}
+
+footer nav {
+    max-width: 1300px; /* Limite la largeur totale sur très grand écran */
+    margin: 0 auto; /* Centre le tout */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Nombre de colonne */
+    align-items: center;
+}
+
+.nav-footer {
+    padding: 1rem;
+    justify-self: end;
+}
+
+footer ul {
+    gap: 1rem; /* Espace entre les liens */ 
+    display: flex; /* Liens dans la meme ligne */
+}
+
+footer li a {
+    padding: 0.5rem 1rem; /* Taille des liens */ 
+    display: block; /* Uniformisation des liens avec le fond du ul */  
+}
+
+footer div p {
+    text-align: center; 
+}
+
+@media (max-width: 600px) {
+    /* !RESET */
+    .buttons {
+        justify-self: center;
+        flex-direction: column; /* Liens en colonne */
+    }
+
+    /* TETE */
+    .nav-mobile {
+        display:flex; /* Affichage visible en mobile */ 
+    }
+
+    .nav-pc.visible { 
+    left: 0; /* Le menu est absent en l'absence d'un click sur la nav-mobile */
+    }
+
+    .nav-pc {
+        top: 0;
+        padding: 5rem 0;
+        position: fixed; /* Menu suit le scroll */
+        width: 100%; /* Remplit l'écran */
+        height: calc(100vh - 100px); /* Scroll taille */
+        overflow-y: auto; /* Scroll vertical */
+        -ms-overflow-style: none; /* Internet Explorer 10+ */ 
+        scrollbar-width: none; /* Firefox, Safari 18.2+, Chromium 121+ */
+        transition: 0.3s; /* Animation */
+        left: 100%; /* Le menu arrive vers la gauche quand il y a un click sur la nav-mobile */
+        z-index: -1000;
+    }
+
+    .nav-pc ul {
+        justify-self: center;
+        flex-direction: column; /* Liens en colonne */
+        text-align: center; 
+    }
+
+    /* CORPS */
+    .content { 
+        grid-template-columns: 1fr;
+        text-align: center; 
+    }
+    
+    .figure {
+        grid-template-columns: 1fr; /* 1 colonne en mobile */
+    }
+
+    /* PIEDS */
+    footer nav {
+        padding: 1rem;
+        grid-template-columns: 1fr; /* Nombre de colonne */
+        text-align: center; 
+    }
+
+    footer .logo {
+        justify-self: center;
+    }
+
+    .nav-footer {
+        justify-self: center;
+    }
+
+    .nav-footer ul {
+        justify-self: center;
+        flex-direction: column; /* Liens en colonne */
+    }
+}
