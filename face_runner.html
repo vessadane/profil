@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Accueil</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+<!-- SITE -->
+    <body>  
+        <!-- TETE -->
+        <header>                                        
+            <nav> 
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="logo.svg" alt="Logo">
+                    </a>
+                </div>
+                <div class="nav-pc" id="nav_pc"> 
+                    <ul>
+                        <li>
+                            <a href="index.html">Accueil</a>
+                        </li>
+                        <li>
+                            <a href="portfolio.html">Portfolio</a>
+                        </li>
+                        <!-- <li>
+                            <a href="#">Média</a>
+                        </li> -->
+                        <li>
+                            <a href="CV.pdf">CV</a>
+                        </li>
+                    </ul>
+                </div>
+                <button class="nav-mobile" id="nav_mobile">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </header>
+
+        <!-- CORPS -->
+        <main class="content1">
+            <article class="card">
+                <h1>
+                    Face Runner
+                </h1>
+                </p>
+                Un réplicant se réveille dans un laboratoire, il se fait piquer par une machine mais il tente de se défendre.
+                </p>
+                <div class="video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/nq8F6D3_4jQ?si=iYKstBhJAZwc54Sj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <h2>
+                    Breakdown
+                </h2>
+                <h3>
+                    Modélisation
+                </h3>
+                </p>
+                Pour la partie modélisation, j'ai utilisé des références de Blade Runner et de Detroit: Become Human. Ensuite, j'ai commencé à faire l'aspect général des différents modèles avec des formes basiques et des primitives. Enfin, j'ai sculpté les différentes parties de chaque modèle à partir de ces bases avant de faire la topologie.
+                </p>
+                <div class="img">
+                     <img src="Image/Face_runner_modelisation.png" alt="Logo image">
+                <h3>
+                    Rigging
+                </h3>
+                </p>
+                Au niveau du rigging, j'ai mis des contrôleurs là où il y a un besoin pour le film d'animation. Le IK est là pour faciliter le contact et animer de manière plus rapide.
+                <div class="video">
+                     <iframe width="560" height="315" src="https://www.youtube.com/embed/GScdQeJ665s?si=viPaodxKNUbgR993" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <h3>
+                Texture procédurale
+                </h3>
+                </p>
+                Pour la texture, j'ai utilisé la méthode procédurale pour la faire. J'ai fais le choix de faire un style assez propre pour mettre en avant le contexte médical. 
+                </p>
+                <div class="img">
+                     <img src="Image/Face_Runner_texture.png" alt="Logo image">
+                </div>
+                <h3>
+                Eclairage
+                </h3>
+                <p>
+                J'ai opté pour un éclairage à trois point car cela met en valeur les différents éléments. La couleur de chaque lumière est neutre pour montrer le côté médical.
+                </p>
+                <div class="img">
+                     <img src="Image/Face_Runner_eclairage0.png" alt="Logo image">
+                </div>
+                <div class="img">
+                     <img src="Image/Face_Runner_eclairage1.png" alt="Logo image">
+                </div>
+                <div class="img">
+                     <img src="Image/Face_Runner_eclairage2.png" alt="Logo image">
+                </div>
+                <h3>
+                    Animation
+                </h3>
+                </p>
+                Pour la réalisation de cette animation, j'ai animé un élément à la fois pour ne pas m'éparpiller. Pour chaque élément, je commence par faire les poses clés, le blocking et l'interpolation. A partir de l'étape des poses clés, je prends différents commentaires pour améliorer l'animation et avoir le rendu que vous pouvez voir au début de la page.
+                </p>
+                <div class="video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/lhUimWrE4pI?si=q_j9H7NOwRvLN_ww" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </article>
+        </main>
+
+        <!-- PIEDS -->
+        <footer>
+            <nav>
+               <div class="logo">
+                    <a href="index.html">
+                        <img src="logo.svg" alt="Logo image">
+                    </a>
+                </div>
+                <div class="nav-footer">
+                    <ul>
+                        <li>
+                            <a href="index.html">Accueil</a>
+                        </li>
+                        <li>
+                            <a href="portfolio.html">Portfolio</a>
+                        </li>
+                        <!-- <li>
+                            <a href="#">Média</a>
+                        </li> -->
+                         <li>
+                            <a href="CV.pdf">CV</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div>
+                <p>© 2025 Vincent Vessadane. Tous droits réservés.</p>
+            </div>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>

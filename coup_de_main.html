@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Accueil</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+<!-- SITE -->
+    <body>  
+        <!-- TETE -->
+        <header>                                        
+            <nav> 
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="logo.svg" alt="Logo">
+                    </a>
+                </div>
+                <div class="nav-pc" id="nav_pc"> 
+                    <ul>
+                        <li>
+                            <a href="index.html">Accueil</a>
+                        </li>
+                        <li>
+                            <a href="portfolio.html">Portfolio</a>
+                        </li>
+                        <!-- <li>
+                            <a href="#">Média</a>
+                        </li> -->
+                        <li>
+                            <a href="CV.pdf">CV</a>
+                        </li>
+                    </ul>
+                </div>
+                <button class="nav-mobile" id="nav_mobile">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </header>
+
+        <!-- CORPS -->
+        <main class="content1">
+            <article class="card">
+                <h1>
+                    Coup de main
+                </h1>
+                </p>
+                Une main de marionnette cherche à se libérer mais la liberté a un prix.
+                </p>
+                <div class="video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/SMTPcT7TvbE?si=LwAjNlcCuYDgZbmQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <h2>
+                    Breakdown
+                </h2>
+                <h3>
+                    Modélisation
+                </h3>
+                </p>
+                Pour la partie modélisation, j'ai pris une référence et j'ai commencé à faire l'aspect général de la main avec des formes basiques et des primitives. Ensuite, j'ai sculpté les différentes parties de la main à partir de ces bases avant de faire la topologie.
+                </p>
+                <div class="img">
+                     <img src="Image/Coup_de_main_modelisation0.png" alt="Logo image">
+                </div>
+                <div class="img">
+                     <img src="Image/Coup_de_main_modelisation1.png" alt="Logo image">
+                </div>
+                <div class="img">
+                     <img src="Image/Coup_de_main_modelisation2.png" alt="Logo image">
+                </div>
+                <h3>
+                    Rigging
+                </h3>
+                </p>
+                J'ai tout d'abord pensé à faire un rigging basé sur le mouvement naturel de la main avant de commencer à faire les squelettes. Chaque partie de la main est contrainte par une influence qui est de 100%, il y a donc pas de déformation. Les doigts ont des contraintes de rotation et ils se manipulent seulement à la base. Par exemple, si le contrôleur de l'index bouge, les autres phalanges suivent le mouvement en retard. Seules les parties de la pouce peuvent bouger indépendemment. Pour les fils, je les ai contraint avec des crochets à leurs extrémités pour qu'ils puissent se déformer quand les squelettes sont déplacés. J'ai ensuite mis des contrôleurs avec des couleurs différentes pour pouvoir les différencier. Seul le contrôleur du master se distingue avec ses flèches.
+                </p>
+                <div class="img">
+                     <img src="Image/Coup_de_main_rigging0.png" alt="Logo image">
+                </div>
+                <div class="img">
+                     <img src="Image/Coup_de_main_rigging1.png" alt="Logo image">
+                </div>
+                <div class="img">
+                     <img src="Image/Coup_de_main_rigging2.png" alt="Logo image">
+                </div>
+                <h3>
+                Texture procédurale
+                </h3>
+                </p>
+                Pour la texture, j'ai utilisé la méthode procédurale pour la faire. J'ai fais le choix de faire un style assez lisse. J'ai mis pour les fils un metallic peu élevé et un roughness très élevé.  Pour la surface de la main, c'est le contraire. Les joints ont juste une couleur différente.
+                </p>
+                <div class="img">
+                     <img src="Image/Coup_de_main_texture0.png" alt="Logo image">
+                </div>
+                <div class="img">
+                     <img src="Image/Coup_de_main_texture1.png" alt="Logo image">
+                </div>
+                <div class="img">
+                     <img src="Image/Coup_de_main_texture2.png" alt="Logo image">
+                </div>
+                <h3>
+                Eclairage
+                </h3>
+                <p>
+                J'ai opté pour un éclairage à trois point car cela met en valeur la main. 
+                J'ai mis un key light avec une intensité plus importante que la fill light qui a une couleur plus chaude. La rim light sert uniquement à détacher les contours de la main du fond.
+                </p>
+                <div class="img">
+                     <img src="Image/Coup_de_main_eclairage0.png" alt="Logo image">
+                </div>
+                <div class="img">
+                     <img src="Image/Coup_de_main_eclairage1.png" alt="Logo image">
+                </div>
+                <div class="img">
+                     <img src="Image/Coup_de_main_eclairage2.png" alt="Logo image">
+                </div>
+                <h3>
+                    Animation
+                </h3>
+                </p>
+                Avant de commencer l'animation, j'ai fait la référence. Ensuite, j'ai commencé à animer le centre de masse qui se trouve au niveau du poignet de la main. J'ai fais plusieurs ajustement avant de finir par animer les parties plus secondaires comme les fils. J'ai fait par la suite le peaufinage suite aux commentaires pour que ça donne le résultat final que vous voyez au début de la page.
+                </p>
+                <div class="video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/q3CASeF9ROY?si=pm1PPLEq6WjcDY_5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/vDHvk3NOnd8?si=RH8ILM8Ak3sCh2yH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/wsRPieKzUEQ?si=kYtDatkY4E6EEuBh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </article>
+        </main>
+
+        <!-- PIEDS -->
+        <footer>
+            <nav>
+               <div class="logo">
+                    <a href="index.html">
+                        <img src="logo.svg" alt="Logo image">
+                    </a>
+                </div>
+                <div class="nav-footer">
+                    <ul>
+                        <li>
+                            <a href="index.html">Accueil</a>
+                        </li>
+                        <li>
+                            <a href="portfolio.html">Portfolio</a>
+                        </li>
+                        <!-- <li>
+                            <a href="#">Média</a>
+                        </li> -->
+                         <li>
+                            <a href="CV.pdf">CV</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div>
+                <p>© 2025 Vincent Vessadane. Tous droits réservés.</p>
+            </div>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>
